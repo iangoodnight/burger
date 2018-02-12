@@ -15,7 +15,7 @@
 					<div class="form-group">
 						<label for="burger">Add a Burger!</label>
 						<input type="text" id="burger" name="name">
-						<button type="submit">Submit</button>
+						<button class="btn btn-md btn-warning" type="submit">Submit</button>
 					</div>
 				<form>
 			</div>
@@ -30,7 +30,7 @@
 			  			{{#unless this.devoured}}
 			  				<li>
 								<span>{{this.id}}. {{this.burger_name}}</span>
-								<button class="eat-it" data-name={{this.burger_name}} data-id={{this.id}}>Eat it!</button>
+								<button class="eat-it btn btn-warning btn-md" data-name={{this.burger_name}} data-id={{this.id}}>Eat it!</button>
 							</li>
 						{{/unless}}
 			  		{{/each}}
@@ -41,7 +41,9 @@
 				<ul>
 			  		{{#each burgers}}
 			  			{{#if this.devoured}}
-							<span>{{this.id}}. {{this.burger_name}}</span>
+			  				<li>
+								<span>{{this.id}}. {{this.burger_name}}</span>
+							</li>
 						{{/if}}
 			  		{{/each}}
 				</ul>

@@ -15,6 +15,7 @@ var orm = {
 	insertOne: function(values, cb) {
 		var queryString = "INSERT INTO burgers (burger_name) VALUES (?)";
 		connection.query(queryString, values, function(err, result) {
+		console.log("queryString: " + queryString);	
 			if (err) {
 				throw err;
 			}
@@ -23,6 +24,7 @@ var orm = {
 
 	},
 	updateOne: function(values, cb) {
+		console.log("Updating: " + values);
 		var queryString = "UPDATE burgers SET devoured = 1 WHERE id = ?";
 		connection.query(queryString, values, function(err, result) {
 			if (err) {
@@ -33,7 +35,6 @@ var orm = {
 	}
 
 };
-
 
 
 // Export the orm object for the model.

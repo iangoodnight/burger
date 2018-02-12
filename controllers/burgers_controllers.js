@@ -17,14 +17,16 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/burger", function(req, res) {
-	var order = req.body;
-	burger.insert(order.customerOrder, function(result) {
+	var newBurger = req.body.burger_name;
+	console.log("new burger: " + newBurger);
+	burger.insert(newBurger, function(result) {
 		res.json({ id: result.insertId });
 	});
 });
 
 router.put("/api/burger/:id", function(req, res) {
 	var id = req.params.id;
+	console.log("burger id: " + id);
 	burger.update(id, function(result) {
 		if (result.changedRows == 0) {
 			return res.status(404).end();

@@ -29,7 +29,7 @@
 			  		{{#each burgers}}
 			  			{{#unless this.devoured}}
 			  				<li>
-								<span>{{this.id}}. {{this.burger_name}}</span>
+								<span class="menu">{{this.id}}. {{this.burger_name}}</span>
 								<button class="eat-it btn btn-warning btn-md" data-name={{this.burger_name}} data-id={{this.id}}>Eat it!</button>
 							</li>
 						{{/unless}}
